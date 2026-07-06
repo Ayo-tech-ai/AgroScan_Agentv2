@@ -26,6 +26,16 @@ st.set_page_config(
     layout="centered"
 )
 
+with st.sidebar:
+    st.subheader("🔍 Debug: View Farm Records")
+    if st.button("Load current records"):
+        connection = sqlite3.connect(DATABASE_NAME)
+        records_df = pd.read_sql_query(
+            "SELECT * FROM farm_records ORDER BY record_date", connection
+        )
+        connection.close()
+        st.dataframe(records_df, use_container_width=True)
+        
 # ============================================================
 # CONSTANTS
 # ============================================================
