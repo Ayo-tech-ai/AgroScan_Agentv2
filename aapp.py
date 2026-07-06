@@ -25,6 +25,11 @@ st.set_page_config(
     layout="centered"
 )
 
+import os
+
+st.write("Current working directory:", os.getcwd())
+st.write("Files in this directory:", os.listdir("."))
+
 # ============================================================
 # ONE-TIME SETUP GUARD
 # Streamlit reruns this entire script on every user interaction.
