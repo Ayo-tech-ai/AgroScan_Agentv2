@@ -26,6 +26,11 @@ st.set_page_config(
     layout="centered"
 )
 
+import os
+
+st.write("Current working directory:", os.getcwd())
+st.write("Files in this directory:", os.listdir("."))
+
 
 # ============================================================
 # CONSTANTS
